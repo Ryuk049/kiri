@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #cceeff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map {
+    width: 90vw;
+    height: auto;
+}
+
+.plane {
+    position: absolute;
+    width: 80px;
+    top: 60%; /* Start from Gujarat */
+    left: 15%;
+    animation: flyPath 6s ease-in-out forwards;
+    cursor: pointer;
+}
+
+.note {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    display: block;
+    background-color: rgb(230, 104, 14);
+}
+
+/* Animating the plane on a curved path */
+@keyframes flyPath {
+    0% { left: 15%; top: 60%; transform: rotate(-20deg); }
+    50% { left: 50%; top: 30%; transform: rotate(0deg); }
+    100% { left: 80%; top: 50%; transform: rotate(20deg); }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
